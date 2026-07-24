@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>DSV | Centro de Cosmetología & Belleza</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVEGACIÓN -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="#inicio" class="brand-logo">
+        <span class="logo-mark">DSV</span>
+        <span class="logo-text">Cosmetología</span>
+      </a>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="#inicio" class="nav-link active">INICIO</a></li>
+          <li><a href="#nosotros" class="nav-link">NOSOTROS</a></li>
+          <li><a href="#servicios" class="nav-link">SERVICIOS</a></li>
+          <li><a href="#galeria" class="nav-link">GALERÍA</a></li>
+          <li><a href="#contacto" class="nav-link">CONTACTO</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO PRINCIPAL -->
+  <section id="inicio" class="hero-section">
+    <canvas id="bubblesCanvas"></canvas>
+
+    <div class="hero-content">
+      <div class="brand-subline rose-gold-text">
+        <svg class="floral-leaf-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22C6.8 19.28 8.1 16.29 10.5 14.5C8 14 6 12 5 9.5C8 9.5 10 11 11.5 13C13.5 10.5 16 8.5 20 8M12 4C8.5 4 6 6 5 8C7.5 7.5 9.5 8.5 11 10C12 7.5 14 5.5 18 5C16 4.3 14 4 12 4Z"/>
+        </svg>
+
+        <h1 class="hero-title-cosmetologia">🌿CENTRO DE COSMETOLOGÍA & BELLEZA🌿</h1>
+
+        <svg class="floral-leaf-icon flip-leaf" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22C6.8 19.28 8.1 16.29 10.5 14.5C8 14 6 12 5 9.5C8 9.5 10 11 11.5 13C13.5 10.5 16 8.5 20 8M12 4C8.5 4 6 6 5 8C7.5 7.5 9.5 8.5 11 10C12 7.5 14 5.5 18 5C16 4.3 14 4 12 4Z"/>
+        </svg>
+      </div>
+
+      <div class="monogram-wrapper rose-gold-text">
+        <span class="letter-d">D</span>
+        <span class="letter-s">S</span>
+        <span class="letter-v">V</span>
+        <div class="logo-glow-aura"></div>
+      </div>
+      
+      <p class="hero-desc">Belleza, elegancia y cuidado en cada detalle</p>
+      
+      <div class="hero-phrase-box">
+        <span class="sparkle-gold">🌿</span>
+        <p class="hero-phrase">"Tu belleza no necesita filtro, solo el cuidado profesional que mereces."</p>
+        <span class="sparkle-gold">🌿</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTRAS -->
+  <section id="nosotros" class="section">
+    <div class="container nosotros-grid">
+      <div class="nosotros-img-container">
+        <!-- RUTA CORREGIDA CON CARPETA -->
+      <img src="imagenes/sobrenosotras/nosotras.jpg" alt="Sobre Nosotras" class="nosotros-img"
+           onerror="this.onerror=null;this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22700%22%3E%3Crect width=%22600%22 height=%22700%22 fill=%22%232a2224%22/%3E%3C/svg%3E'">
+      </div>
+      <div class="nosotros-text">
+        <span class="section-subtitle">CONÓCENOS</span>
+        <h2 class="section-title block-bold-title rose-gold-text">Sobre Nosotras</h2>
+        <p class="block-text">
+          En nuestro centro nos especializamos en resaltar tu esencia a través de tratamientos cosmetológicos y estéticos diseñados a la medida de tus necesidades.
+        </p>
+        <p class="block-text">
+          Combinamos profesionalismo, productos de alta calidad y un ambiente relajante para brindarte una experiencia inolvidable.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="section">
+    <div class="container center-text">
+      <span class="section-subtitle">LO QUE OFRECEMOS</span>
+      <h2 class="section-title block-bold-title rose-gold-text">Nuestros Servicios</h2>
+      <p class="section-desc">Selecciona un servicio para ver todos los detalles y opciones disponibles.</p>
+
+      <div class="servicios-grid" id="serviciosGrid"></div>
+    </div>
+  </section>
+
+  <!-- MODAL DE SERVICIO -->
+  <div class="service-modal" id="serviceModal">
+    <div class="modal-card">
+      <button class="modal-close" id="closeModal">&times;</button>
+      <div class="modal-header">
+        <span class="modal-icon" id="modalIcon"></span>
+        <h3 class="modal-title" id="modalTitle">Servicio</h3>
+      </div>
+      <p class="modal-hint">Toca uno o varios servicios de la lista para incluirlos en tu reserva</p>
+      <ul class="modal-list" id="modalList"></ul>
+      <a href="#" id="modalWaBtn" target="_blank" class="btn btn-modal-gold">RESERVAR CITA</a>
+    </div>
+  </div>
+
+  <!-- GALERÍA POR CATEGORÍAS -->
+  <section id="galeria" class="section">
+    <div class="container center-text">
+      <span class="section-subtitle">NUESTRO TRABAJO</span>
+      <h2 class="section-title block-bold-title rose-gold-text">Galería de Resultados</h2>
+      <div class="galeria-categorias-container" id="galeriaCategorias"></div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="section contacto-section">
+    <div class="container center-text">
+      <h2 class="contacto-title block-bold-title rose-gold-text">Contáctanos</h2>
+      <span class="contacto-sparkle">🫶</span>
+      <p class="contacto-subtext">
+        Escríbenos para reservar tu cita o conocer más sobre nuestros servicios.
+      </p>
+
+      <ul class="contacto-info-list">
+        <li>
+          <span class="info-icon">📍</span>
+          <span>Trujillo, La Libertad, Perú</span>
+        </li>
+        <li>
+          <span class="info-icon">📞</span>
+          <a href="tel:+51941134040">+51 941 134 040</a>
+        </li>
+        <li>
+          <span class="info-icon">✉️</span>
+          <a href="mailto:lavadovillanuevadina@gmail.com">lavadovillanuevadina@gmail.com</a>
+        </li>
+      </ul>
+
+      <div class="contacto-social-btns">
+        <a href="https://wa.me/51941134040?text=Hola,%20%C2%BFpodr%C3%ADa%20brindarme%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%3F" target="_blank" class="social-btn btn-whatsapp-custom">
+          <svg class="btn-icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          WHATSAPP
+        </a>
+        <a href="https://www.tiktok.com" target="_blank" class="social-btn btn-tiktok-custom">TIKTOK</a>
+      </div>
+
+      <div class="map-container-small">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63172.937885449555!2d-79.0628352528766!3d-8.111677840134024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ad3d819a334d5d%3A0x4d5a9d8d69784576!2sTrujillo!5e0!3m2!1ses!2spe!4v1700000000000!5m2!1ses!2spe" 
+          width="100%" 
+          height="220" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a href="https://wa.me/51941134040?text=Hola,%20%C2%BFpodr%C3%ADa%20brindarme%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%3F" target="_blank" class="whatsapp-float-glow" aria-label="Contacto por WhatsApp">
+    <div class="whatsapp-glow-ring"></div>
+    <div class="whatsapp-circle">
+      <svg class="whatsapp-icon-svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+      </svg>
+    </div>
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© <span id="year"></span> DSV Cosmetología. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

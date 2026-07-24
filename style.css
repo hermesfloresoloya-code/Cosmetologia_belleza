@@ -1,0 +1,813 @@
+:root {
+  --bg-dark: #0a0809;
+  --card-bg: #151214;
+  --text-white: #ffffff;
+  --text-gray: #b8b0b2;
+  
+  --font-block-bold: 'Cinzel', serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-body: 'Montserrat', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+/* ==================================================
+   EFECTO METÁLICO ROSE GOLD
+   ================================================== */
+.rose-gold-text {
+  background: linear-gradient(135deg, #f3d1be 0%, #d49a82 40%, #a86550 70%, #e0ad99 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 3px 8px rgba(168, 101, 80, 0.4));
+}
+
+/* ==================================================
+   HEADER
+   ================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  padding-top: max(1rem, env(safe-area-inset-top));
+  background: #fcfaf7;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+  z-index: 1000;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+}
+
+.logo-mark {
+  background: linear-gradient(135deg, #f3d1be 0%, #a86550 100%);
+  color: #1a1612;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  font-family: var(--font-block-bold);
+}
+
+.logo-text {
+  font-family: var(--font-block-bold);
+  font-size: 1.2rem;
+  color: #1a1612;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  position: relative;
+  color: #1a1612;
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  font-weight: 600;
+  padding-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #a86550;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+  z-index: 1001;
+}
+
+.mobile-menu-btn span {
+  width: 25px;
+  height: 2px;
+  background-color: #1a1612;
+}
+
+/* ==================================================
+   HERO / MONOGRAMA Y TITULO BOTÁNICO
+   ================================================== */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 90px;
+  background: radial-gradient(circle at center, #1a1518 0%, #0a0809 100%);
+  overflow: hidden;
+}
+
+#bubblesCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 0 1.5rem;
+}
+
+.monogram-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-block-bold);
+  height: 180px;
+  margin: 0 auto 1.2rem auto;
+  user-select: none;
+}
+
+.monogram-wrapper .letter-d {
+  font-size: 7.5rem;
+  font-weight: 700;
+  transform: translateX(25px) translateY(-10px);
+  z-index: 1;
+}
+
+.monogram-wrapper .letter-s {
+  font-size: 9.5rem;
+  font-weight: 400;
+  font-family: var(--font-script);
+  z-index: 2;
+  margin: 0 -15px;
+}
+
+.monogram-wrapper .letter-v {
+  font-size: 7.5rem;
+  font-weight: 700;
+  transform: translateX(-25px) translateY(10px);
+  z-index: 1;
+}
+
+/* Estilo para las flores/hojas laterales */
+.brand-subline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.floral-leaf-icon {
+  width: 28px;
+  height: 28px;
+  color: #d49a82;
+  flex-shrink: 0;
+}
+
+.floral-leaf-icon.flip-leaf {
+  transform: scaleX(-1);
+}
+
+.hero-title-cosmetologia {
+  font-family: var(--font-body);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 6px;
+  margin: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hero-desc {
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: var(--text-gray);
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+.hero-phrase-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: rgba(21, 18, 20, 0.75);
+  border: 1px solid rgba(212, 154, 130, 0.3);
+  border-radius: 50px;
+  backdrop-filter: blur(8px);
+}
+
+.hero-phrase {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #f0e6e8;
+  margin: 0;
+}
+
+.sparkle-gold {
+  color: #d49a82;
+  font-size: 1rem;
+}
+
+/* ==================================================
+   SECCIONES Y SOBRE NOSOTRAS
+   ================================================== */
+.section {
+  padding: 5rem 2rem;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: #d49a82;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.block-bold-title {
+  font-family: var(--font-block-bold);
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.block-text {
+  font-weight: 400;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #d1c8be;
+  margin-bottom: 1.2rem;
+}
+
+.nosotros-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.nosotros-img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #d49a82;
+  box-shadow: 0 5px 25px rgba(212, 154, 130, 0.2);
+}
+
+/* ==================================================
+   SERVICIOS
+   ================================================== */
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.servicio-card {
+  background: var(--card-bg);
+  padding: 2.5rem 1.5rem;
+  border-radius: 18px;
+  border: 1px solid rgba(212, 154, 130, 0.15);
+  cursor: pointer;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.servicio-card:hover {
+  transform: translateY(-6px);
+  border-color: #d49a82;
+  box-shadow: 0 10px 30px rgba(212, 154, 130, 0.2);
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  height: 50px;
+}
+
+.service-icon-svg {
+  width: 45px;
+  height: 45px;
+  color: #d49a82;
+}
+
+.servicio-card h3 {
+  font-family: var(--font-block-bold);
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+}
+
+.servicio-card p {
+  font-size: 0.85rem;
+  color: var(--text-gray);
+  margin-bottom: 1.5rem;
+}
+
+.btn-ver-detalles {
+  background: none;
+  border: none;
+  color: #d49a82;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* ==================================================
+   MODAL
+   ================================================== */
+.service-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 2000;
+}
+
+.service-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  background: #181416;
+  border: 1px solid #d49a82;
+  box-shadow: 0 0 30px rgba(212, 154, 130, 0.25);
+  color: #fff;
+  width: 90%;
+  max-width: 400px;
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-title {
+  font-family: var(--font-block-bold);
+  font-size: 1.5rem;
+}
+
+.modal-hint {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  margin: -0.8rem 0 1rem;
+}
+
+.modal-list {
+  list-style: none;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.modal-list li {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(212, 154, 130, 0.1);
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.15s ease;
+}
+
+.modal-list li:hover {
+  background: rgba(212, 154, 130, 0.12);
+  border-color: rgba(212, 154, 130, 0.35);
+}
+
+.modal-list li:active {
+  transform: scale(0.98);
+}
+
+.modal-list li.selected {
+  background: linear-gradient(135deg, rgba(243, 209, 190, 0.22), rgba(168, 101, 80, 0.22));
+  border-color: #d49a82;
+}
+
+.modal-list li .check-box {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 1.5px solid rgba(212, 154, 130, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.modal-list li .check-mark {
+  font-size: 0.7rem;
+  color: #181416;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.modal-list li.selected .check-box {
+  background: linear-gradient(135deg, #f3d1be 0%, #d49a82 50%, #a86550 100%);
+  border-color: #d49a82;
+}
+
+.modal-list li.selected .check-mark {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.btn-modal-gold {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f3d1be 0%, #d49a82 50%, #a86550 100%);
+  color: #000;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  box-shadow: 0 0 15px rgba(212, 154, 130, 0.5);
+}
+
+/* ==================================================
+   GALERÍA POR CATEGORÍAS
+   ================================================== */
+.galeria-bloque {
+  margin-bottom: 3.5rem;
+  text-align: left;
+}
+
+.categoria-titulo {
+  font-family: var(--font-block-bold);
+  font-size: 1.3rem;
+  color: #d49a82;
+  letter-spacing: 2px;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(212, 154, 130, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.mini-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.mini-gallery-item {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--card-bg);
+}
+
+.mini-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.mini-gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.2) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0.8rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mini-gallery-item:hover .hover-overlay {
+  opacity: 1;
+}
+
+.hover-category {
+  font-size: 0.65rem;
+  color: #d49a82;
+  letter-spacing: 1.5px;
+}
+
+.hover-title {
+  font-size: 0.8rem;
+  color: var(--text-white);
+}
+
+/* ==================================================
+   CONTACTO Y BOTONES
+   ================================================== */
+.contacto-section {
+  text-align: center;
+}
+
+.contacto-sparkle {
+  color: #d49a82;
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.contacto-subtext {
+  color: var(--text-gray);
+  font-size: 0.95rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+.contacto-info-list {
+  list-style: none;
+  margin: 0 auto 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contacto-info-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.contacto-info-list a {
+  color: var(--text-white);
+  text-decoration: none;
+}
+
+.contacto-social-btns {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.social-btn {
+  padding: 0.9rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  transition: all 0.3s ease;
+}
+
+.btn-icon-svg {
+  width: 18px;
+  height: 18px;
+}
+
+.btn-whatsapp-custom {
+  background: linear-gradient(135deg, #25D366 0%, #10a358 50%, #076635 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+}
+
+.btn-whatsapp-custom:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 30px rgba(37, 211, 102, 0.8);
+}
+
+.btn-tiktok-custom {
+  background: linear-gradient(135deg, #2c2925 0%, #171513 50%, #000000 100%);
+  color: #d49a82;
+  border: 1px solid #d49a82;
+  box-shadow: 0 0 15px rgba(212, 154, 130, 0.3);
+}
+
+.btn-tiktok-custom:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 25px rgba(212, 154, 130, 0.6);
+  color: #fff;
+}
+
+.map-container-small {
+  max-width: 450px;
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 154, 130, 0.2);
+}
+
+/* ==================================================
+   BOTÓN FLOTANTE WHATSAPP NEÓN GLOW
+   ================================================== */
+.whatsapp-float-glow {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 65px;
+  height: 65px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-circle {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #25D366 0%, #10a358 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(37, 211, 102, 0.9);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-float-glow:hover .whatsapp-circle {
+  transform: scale(1.1);
+}
+
+.whatsapp-icon-svg {
+  width: 32px;
+  height: 32px;
+  fill: #ffffff;
+}
+
+.whatsapp-glow-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid rgba(37, 211, 102, 0.8);
+  animation: waPulseGlow 2s infinite ease-out;
+  z-index: 1;
+}
+
+@keyframes waPulseGlow {
+  0% { width: 60px; height: 60px; opacity: 1; }
+  100% { width: 100px; height: 100px; opacity: 0; }
+}
+
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-gray);
+  font-size: 0.8rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .mobile-menu-btn { display: flex; }
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: #fcfaf7;
+    padding: 6rem 2rem;
+    transition: right 0.4s ease;
+  }
+  .nav-menu.active { right: 0; }
+  .nav-list { flex-direction: column; align-items: flex-start; gap: 2rem; }
+  
+  .monogram-wrapper { height: 130px; }
+  .monogram-wrapper .letter-d { font-size: 5rem; transform: translateX(18px) translateY(-5px); }
+  .monogram-wrapper .letter-s { font-size: 6.5rem; }
+  .monogram-wrapper .letter-v { font-size: 5rem; transform: translateX(-18px) translateY(5px); }
+  
+  .hero-title-cosmetologia { 
+    font-size: 0.85rem; 
+    letter-spacing: 3px; 
+    white-space: normal;
+  }
+
+  .floral-leaf-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .block-bold-title { font-size: 2.2rem; }
+  .nosotros-grid { grid-template-columns: 1fr; }
+}
